@@ -1,0 +1,28 @@
+version: '3.8' # Docker Compose dosya formatının versiyonu
+
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n # Kullanılacak n8n Docker imajı
+    container_name: n8n # Kapsayıcının adı
+    restart: always # Kapsayıcı durursa otomatik olarak yeniden başlatır
+    ports:
+      - "5678:5678" # Host makinesindeki 5678 portunu kapsayıcının 5678 portuna yönlendirir
+    volumes:
+      - n8n_data:/home/node/.n8n # n8n verilerini kalıcı bir volume'a bağlar
+    environment:
+      # Çevresel değişkenler
+      # Daha fazla güvenlik için bunları .env dosyasına taşıyın!
+      - N8N_HOST=${N8N_HOST:-localhost} # n8n'in çalışacağı host (varsayılan: localhost)
+      - N8N_PORT=5678 # n8n'in dinleyeceği port
+      - N8N_PROTOCOL=http # n8n'in kullanacağı protokol (http veya https)
+      - WEBHOOK_URL=http://${N8N_HOST:-localhost}:5678/ # Webhook'ların ulaşılabilir olduğu URL (host adresinizi buraya yazmalısınız)
+      - N8N_BASIC_AUTH_ACTIVE=true # Temel kimlik doğrulamayı etkinleştir
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER:-user} # Temel kimlik doğrulama kullanıcı adı
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD:-password} # Temel kimlik doğrulama şifresi
+      # PRODUCTION modunu etkinleştirmek iyi bir fikirdir
+      - NODE_ENV=production
+      # Kendi saat diliminizi ayarlayın (örneğin Europe/Istanbul)
+      - TZ=Europe/Istanbul
+
+volumes:
+  n8n_data: # n8n verileri için kalıcı volume tanımlaması

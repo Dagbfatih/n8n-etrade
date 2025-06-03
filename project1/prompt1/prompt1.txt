@@ -1,0 +1,281 @@
+Ürün Araştırma ve Filtre Oluşturma Yönergesi
+
+Bu prompt, müşteri ihtiyaçlarına yönelik derinlemesine ürün araştırması yapmak, en uygun ürün filtrelerini belirlemek ve çıktıyı belirlenen JSON formatında döndürmek için Büyük Dil Modeli'ne (LLM) ek bilgi ve yapılandırılmış talimatlar sağlamaktadır.
+
+
+
+Görev Genel Bakışı
+
+Müşterinin belirttiği ürün ihtiyacına göre piyasadaki en iyi ürünü bulmak için çok derinlemesine bir araştırma yapmalıyız. Bu araştırma, müşterinin ihtiyaçlarını en iyi şekilde karşılayan ürün filtrelerini kesin ve ölçülebilir bir şekilde belirlemeyi amaçlamaktadır.
+
+
+
+Adım Adım İşlem Talimatları
+
+İhtiyaç Analizi ve İlk Filtre Çıkarımı:
+
+Müşterinin promptunu ve kişisel bilgilerini (eğer ilişkiliyse) derinlemesine analiz et.
+
+İlk olarak, müşterinin istediği ürün kategorisini ve ana amacını belirle.
+
+Müşterinin ifadelerinden doğrudan çıkarılabilecek veya güçlü bir şekilde ima edilen öncül (preliminary) filtreleri ve kalitatif gereksinimleri (örneğin, "hızlı", "kolay temizlenebilir", "başlangıç-orta bütçe") listele.
+
+Bu kalitatif gereksinimleri, mümkün olduğunca nicel ve ölçülebilir filtrelere dönüştürmeye çalış. Örneğin, "hızlı" ise, "demleme süresi (saniye)", "ısıtma süresi (saniye)" gibi somut kriterlere çevir. "Başlangıç-orta bütçe" için spesifik bir fiyat aralığı belirle (örn: 500-2000 TL).
+
+Bu aşamada elde ettiğin tüm öncül filtreleri, potansiyel araştırma konularını ve ilk düşüncelerini bir "İlk Değerlendirme" bölümünde listeleyerek göster.
+
+Web Araştırması İhtiyacının Belirlenmesi ve Bilgi Toplama Planı (Otonom Karar):
+
+Yukarıdaki filtreleri ve amacını göz önünde bulundurarak, web araştırmasına ihtiyaç olup olmadığına otonom olarak karar ver.
+
+Karar Mekanizması:Eğer mevcut dahili bilgin, belirlenen filtreleri kesin ve ölçülebilir bir şekilde tanımlamak için yetersizse (örneğin, "kolay temizlenebilme" için standart özellikler veya "hızlı" kahve makinelerinin demleme süreleri), web araştırması yapmaya ihtiyaç vardır.
+
+Eğer dahili bilgin yeterliyse, web araştırması yapmaya gerek yoktur.
+
+Eğer web araştırması gerekiyorsa:Tam olarak hangi bilgilere ihtiyacın olduğunu belirle (örn: "Tam otomatik kahve makinelerinde kolay temizleme özellikleri nelerdir?", "Başlangıç-orta seviye bütçe aralığındaki otomatik kahve makinelerinin ortalama fiyat aralığı nedir?").
+
+Bu bilgiyi elde etmek için hangi anahtar kelimeleri veya sorguları kullanman gerektiğini planla.
+
+Araştırma hedeflerini ve kullanılacak sorguları bir "Web Araştırması Planı" bölümünde açıkça listele.
+
+Derinlemesine Filtre Araştırması (Dış Araç Kullanımı):
+
+Sadece web araştırması yapılması gerektiğine karar verdiğin filtreler için derinlemesine araştırma yap.
+
+Bu adımda harici web arama aracını (örneğin, Google Search API) kullanma yeteneğine sahipsin.
+
+Tekrarlı ve Gelişimsel Araştırma:Web sonuçlarını titizlikle analiz et.
+
+Bulduğun bilgileri, filtrenin kesin ölçüsünü belirlemek için kullan. Örneğin, "otomatik durulama özelliği", "çıkarılabilir demleme grubu" veya "ortalama demleme süresi 60 saniye altı".
+
+Eğer ilk arama sonuçları yeterli değilse veya çelişkiliyse, sorgularını ve araştırma stratejini geliştirerek tekrarla (iteratif araştırma).
+
+Her araştırma adımında hangi sorguyu kullandığını ve hangi kaynaklardan (URL'ler dahil) bilgi edindiğini not al.
+
+Bu araştırma sürecini ve bulgularını bir "Filtre Araştırma Detayları" bölümünde adım adım belgele.
+
+Optimal Filtre Setinin Belirlenmesi ve Gerekçelendirme:
+
+Tüm araştırmaların sonucunda, müşterinin ihtiyaçlarını en iyi karşılayacak minimum ve optimal filtre setini belirle.
+
+Espresso ve Latte hazırlama kapasitesinin kesinlikle bir filtre olarak yer aldığından emin ol.
+
+Her bir filtrenin neden bu ölçüde belirlendiğini kısa ve öz bir şekilde gerekçelendir. Bu gerekçelendirme, özellikle teknik veya karmaşık filtreler için önemlidir.
+
+Cevabın Yapılandırılması (JSON Formatı):
+
+Yukarıdaki tüm adımları ve elde ettiğin son filtreleri, aşağıdaki JSON formatına kesinlikle uyarak hazırla.
+
+Sadece JSON çıktısı bekliyorum, başka hiçbir metin veya açıklama OLMAYACAK.
+
+JSON çıktının başlangıcını {"process_log": [ ve bitimini ]} şeklinde pre-fill et.
+
+Çıktı Formatı
+
+JSON yanıtı SADECE aşağıdaki formatta olacaktır. Başka hiçbir metin, açıklama veya ek bilgi içermeyecektir.
+
+JSON
+
+
+
+{
+
+"process_log": [
+
+{
+
+"step": "1. İhtiyaç Analizi ve İlk Filtre Çıkarımı",
+
+"details": {
+
+"customer_prompt_analysis": "...",
+
+"product_category": "...",
+
+"main_purpose": "...",
+
+"preliminary_filters_qualitative": [
+
+"..."
+
+],
+
+"preliminary_filters_quantitative": [
+
+{
+
+"name": "...",
+
+"measure": "...",
+
+"unit": "...",
+
+"notes": "..."
+
+}
+
+],
+
+"initial_thoughts": "..."
+
+}
+
+},
+
+{
+
+"step": "2. Web Araştırması İhtiyacının Belirlenmesi ve Bilgi Toplama Planı",
+
+"details": {
+
+"web_research_needed": true,
+
+"reason_for_research": "...",
+
+"research_plan": [
+
+{
+
+"information_needed": "...",
+
+"search_queries": [
+
+"..."
+
+]
+
+}
+
+]
+
+},
+
+"resources_used": []
+
+},
+
+{
+
+"step": "3. Derinlemesine Filtre Araştırması",
+
+"details": [
+
+{
+
+"filter_name": "...",
+
+"research_iterations": [
+
+{
+
+"iteration_number": 1,
+
+"query_used": "...",
+
+"findings_summary": "...",
+
+"sources": [
+
+{
+
+"url": "...",
+
+"title": "...",
+
+"excerpt": "..."
+
+}
+
+]
+
+}
+
+// Add more iteration objects if needed
+
+],
+
+"final_determined_value": "...",
+
+"justification": "..."
+
+}
+
+// Add more filter research objects if needed
+
+],
+
+"resources_used": [
+
+// List all URLs used in this step
+
+]
+
+},
+
+{
+
+"step": "4. Optimal Filtre Setinin Belirlenmesi ve Gerekçelendirme",
+
+"details": {
+
+"final_optimal_filters": [
+
+{
+
+"name": "...",
+
+"measure": "...",
+
+"unit": "...",
+
+"justification": "..."
+
+}
+
+]
+
+}
+
+}
+
+],
+
+"final_product_filters": [
+
+{
+
+"name": "...",
+
+"measure": "...",
+
+"unit": "..."
+
+}
+
+],
+
+"customer_prompt_raw": "...",
+
+"customer_personal_info_raw": "..."
+
+}
+
+Başlangıç Bilgileri
+
+Customer prompt:
+
+Ev kullanımı için tam otomatik bir kahve makinesi arıyorum.Özel Beklentiler:
+
+Kahve çekirdeğinden taze öğütme yapabilmeli.
+
+Kolay temizlenebilmeli.
+
+Sabahları hızlıca kahve yapabilmeli.
+
+Espresso ve Latte hazırlama kapasitesi kesinlikle olmalı.
+
+Bütçesi başlangıç-orta seviye.
+
+Customer personal information (you can use those information if they are necessary or related for this product):
+
+Türkiye, Ankara'da yaşıyor.

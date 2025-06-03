@@ -1,0 +1,284 @@
+{
+  "process_log": [
+    {
+      "step": "1. İhtiyaç Analizi ve İlk Filtre Çıkarımı",
+      "details": {
+        "customer_prompt_analysis": "Müşteri, ev kullanımı için tam otomatik bir kahve makinesi aramaktadır. Temel beklentileri arasında taze çekirdek öğütme, kolay temizlenebilirlik, hızlı kahve hazırlama, Espresso ve Latte yapabilme kapasitesi ve başlangıç-orta seviye bir bütçe bulunmaktadır.",
+        "product_category": "Tam Otomatik Kahve Makinesi",
+        "main_purpose": "Ev kullanımı için taze çekirdek kahveden hızlı ve kolayca Espresso ve Latte hazırlama.",
+        "preliminary_filters_qualitative": [
+          "Kahve çekirdeğinden taze öğütme",
+          "Kolay temizlenebilme",
+          "Hızlı kahve yapabilme",
+          "Espresso hazırlama kapasitesi",
+          "Latte hazırlama kapasitesi",
+          "Başlangıç-orta bütçe"
+        ],
+        "preliminary_filters_quantitative": [
+          {
+            "name": "Fiyat Aralığı",
+            "measure": "500-2000",
+            "unit": "TL",
+            "notes": "Başlangıç-orta bütçe ifadesinden yola çıkarak belirlenen tahmini aralık, web araştırması ile kesinleştirilecek."
+          },
+          {
+            "name": "Demleme Süresi",
+            "measure": "Hızlı",
+            "unit": "saniye",
+            "notes": "Spesifik bir değer için web araştırması gerekli."
+          },
+          {
+            "name": "Temizleme Kolaylığı",
+            "measure": "Belirli Özellikler",
+            "unit": "özellik",
+            "notes": "Web araştırması ile kolay temizlemeyi sağlayan özellikler belirlenecek (örn: çıkarılabilir demleme grubu, otomatik durulama)."
+          }
+        ],
+        "initial_thoughts": "Müşterinin temel beklentileri net. Özellikle 'kolay temizlenebilirlik' ve 'hızlı' kavramlarının nicel filtrelere dönüştürülmesi ve 'başlangıç-orta bütçe' için somut bir fiyat aralığı belirlenmesi için web araştırmasına ihtiyaç var. Espresso ve Latte kapasitesi zaten otomatik makinelerin çoğunda mevcut, bu bir onay filtresi olacak. Çekirdek öğütme de tam otomatik makinelerin temel özelliğidir."
+      }
+    },
+    {
+      "step": "2. Web Araştırması İhtiyacının Belirlenmesi ve Bilgi Toplama Planı",
+      "details": {
+        "web_research_needed": true,
+        "reason_for_research": "Mevcut dahili bilgi, 'kolay temizlenebilirlik' ve 'hızlı kahve yapabilme' gibi kalitatif gereksinimleri kesin ve ölçülebilir filtrelere dönüştürmek için yetersizdir. Ayrıca 'başlangıç-orta bütçe' için Türkiye pazarında güncel ve somut bir fiyat aralığına ihtiyaç vardır.",
+        "research_plan": [
+          {
+            "information_needed": "Tam otomatik kahve makinelerinde kolay temizleme özellikleri nelerdir?",
+            "search_queries": [
+              "tam otomatik kahve makinesi kolay temizleme özellikleri",
+              "otomatik kahve makinesi demleme grubu temizliği",
+              "lattego kolay temizlik",
+              "çıkarılabilir demleme grubu avantajları"
+            ]
+          },
+          {
+            "information_needed": "Başlangıç-orta seviye tam otomatik kahve makinelerinin Türkiye'deki ortalama fiyat aralığı nedir?",
+            "search_queries": [
+              "başlangıç orta seviye tam otomatik kahve makinesi fiyat aralığı türkiye",
+              "uygun fiyatlı tam otomatik kahve makinesi",
+              "en ucuz tam otomatik kahve makinesi"
+            ]
+          },
+          {
+            "information_needed": "Tam otomatik kahve makinelerinde 'hızlı kahve yapabilme' ne anlama gelir ve ortalama demleme süreleri nelerdir?",
+            "search_queries": [
+              "en hızlı tam otomatik kahve makineleri demleme süresi",
+              "tam otomatik kahve makinesi ısınma süresi"
+            ]
+          }
+        ]
+      },
+      "resources_used": []
+    },
+    {
+      "step": "3. Derinlemesine Filtre Araştırması",
+      "details": [
+        {
+          "filter_name": "Kolay Temizlenebilirlik",
+          "research_iterations": [
+            {
+              "iteration_number": 1,
+              "query_used": "tam otomatik kahve makinesi kolay temizleme özellikleri",
+              "findings_summary": "Kolay temizlenebilirlik genellikle çıkarılabilir demleme grubu, otomatik durulama programları, kolayca çıkarılıp yıkanabilen süt sistemleri (örn. LatteGo) ve damlama tepsisi/atık kahve haznesi gibi özelliklerle ilişkilidir. Kireç çözme uyarısı ve programları da önemli.",
+              "sources": [
+                {
+                  "url": "https://www.philips.com.tr/c-f/XC000004116/philips-espresso-makinemin-temizlik-ve-bak%C4%B1m%C4%B1n%C4%B1-nas%C4%B1l-yapar%C4%B1m",
+                  "title": "Philips Espresso Makinemin temizlik ve bakımını nasıl yaparım?",
+                  "excerpt": "Demleme grubunu haftalık olarak ılık suyla durulama, aylık olarak temizleyici tabletlerle yağını temizleme. Damlama tepsisi ve atık kahve haznesi günlük/haftalık temizlenmeli. Su haznesi haftalık temizlenmeli."
+                },
+                {
+                  "url": "https://gaggiamilano.com.tr/blog/tam-otomatik-kahve-makinesi-alirken-nelere-dikkat-edilmeli",
+                  "title": "Tam Otomatik Kahve Makinesi Alırken Nelere Dikkat Edilmeli? | Gaggia Milano",
+                  "excerpt": "Süt tankının çıkarılabilir olması ve kolay temizlenebilmesi büyük avantajdır."
+                },
+                {
+                  "url": "https://www.arcelik.com.tr/blog/kahve-makinesi-temizligi-ve-bakimi",
+                  "title": "Kahve Makinesi Temizliği ve Bakımı | Arçelik Blog",
+                  "excerpt": "300 kullanımda bir kireç çözme temizliği önerilir. Kapsüllü kahve makinelerinde kireç çözme modu."
+                }
+              ]
+            }
+          ],
+          "final_determined_value": "Çıkarılabilir demleme grubu; Otomatik durulama ve kireç çözme programı; Kolay çıkarılabilir ve bulaşık makinesinde yıkanabilir süt sistemi (LatteGo gibi); Damlama tepsisi ve atık kahve haznesi kolayca boşaltılabilir ve temizlenebilir.",
+          "justification": "Bu özellikler, tam otomatik kahve makinelerinde kullanıcıya en yüksek temizleme kolaylığını sağlar. Özellikle çıkarılabilir demleme grubu ve otomatik süt sistemi temizliği, günlük bakımı önemli ölçüde basitleştirir."
+        },
+        {
+          "filter_name": "Fiyat Aralığı",
+          "research_iterations": [
+            {
+              "iteration_number": 1,
+              "query_used": "başlangıç orta seviye tam otomatik kahve makinesi fiyat aralığı türkiye",
+              "findings_summary": "Türkiye pazarında tam otomatik kahve makineleri için 'başlangıç-orta' seviye genellikle 10.000 TL ile 30.000 TL arasında değişmektedir. Philips'in 10.000-25.000 TL aralığında, De'Longhi'nin ise 18.000-50.000 TL aralığında modelleri bulunmaktadır. Daha uygun fiyatlı seçenekler genellikle temel modellerdir, süt sistemleri manuel olabilir veya daha az içecek seçeneği sunabilir.",
+              "sources": [
+                {
+                  "url": "https://www.akakce.com/espresso-makinesi/philips.html",
+                  "title": "Philips Espresso Makinesi Fiyatları | En Ucuzu Akakçe",
+                  "excerpt": "Philips modelleri 11.399 TL'den başlayıp 29.100 TL'ye kadar çıkıyor."
+                },
+                {
+                  "url": "https://shop.delonghi.com.tr/otomatik-kahve-makineleri",
+                  "title": "Otomatik Kahve Makineleri | De'Longhi Türkiye - Delonghi",
+                  "excerpt": "De'Longhi modelleri 17.990 TL'den başlayıp 135.900 TL'ye kadar çıkıyor."
+                },
+                {
+                  "url": "https://www.cimri.com/ogutuculu-kahve-makinesi",
+                  "title": "Öğütücülü Kahve Makinesi Fiyatları - Cimri",
+                  "excerpt": "Çeşitli markaların modelleri 10.000 TL'den başlayıp 30.000 TL ve üzerine çıkmaktadır."
+                }
+              ]
+            }
+          ],
+          "final_determined_value": "12000-28000 TL",
+          "justification": "Yapılan piyasa araştırması, başlangıç-orta seviye tam otomatik kahve makinelerinin Türkiye'deki güncel fiyat aralığını bu sınırlar içinde göstermektedir. Bu aralık, taze öğütme, otomatik süt sistemi (LatteGo gibi) ve temel espresso/latte kapasitesine sahip modelleri kapsamaktadır."
+        },
+        {
+          "filter_name": "Demleme Hızı",
+          "research_iterations": [
+            {
+              "iteration_number": 1,
+              "query_used": "en hızlı tam otomatik kahve makineleri demleme süresi",
+              "findings_summary": "Tam otomatik kahve makinelerinde 'hız', genellikle makinenin açılış ve ısınma süresi ile ilk kahveyi hazırlama süresiyle ilişkilidir. Espresso demleme süresi genellikle 20-30 saniye civarındadır. Philips gibi markalar 'QuickStart' teknolojisi ile hızlı başlangıç sunmaktadır. Genel olarak, makine çalışmaya hazır hale geldikten sonra bir espresso veya latte'nin hazırlanması 1 dakikayı aşmamalıdır.",
+              "sources": [
+                {
+                  "url": "https://www.philips.com.tr/c-e/ho/kahve-makineleri/5500-serisi-lattego.html",
+                  "title": "Philips 5500 LatteGo",
+                  "excerpt": "QuickStart ile beklemeden daha hızlı kahve."
+                },
+                {
+                  "url": "https://www.baristamarketi.com/blogs/news/espresso-makinesi-temizligi-nasil-yapilir",
+                  "title": "Espresso makinesi almadan önce bilmeniz gerekenler - Barista Marketi",
+                  "excerpt": "Espresso hazırlık süresi önemli bir faktör."
+                }
+              ]
+            }
+          ],
+          "final_determined_value": "İlk kahve hazırlama süresi (makine açılış ve ısınma dahil) < 90 saniye; Tek shot espresso demleme süresi < 30 saniye",
+          "justification": "Müşterinin 'sabahları hızlıca kahve yapabilme' beklentisini karşılamak için makinenin genel hazırlık süresi ve bir fincan kahvenin demleme süresi belirlenmiştir. Tam otomatik makineler genellikle hızlı ısınma ve otomatik hazırlama süreçleri sunar."
+        },
+        {
+          "filter_name": "Espresso ve Latte Hazırlama Kapasitesi",
+          "research_iterations": [
+            {
+              "iteration_number": 1,
+              "query_used": "tam otomatik kahve makinesi espresso latte kapasitesi",
+              "findings_summary": "Tam otomatik kahve makinelerinin çoğu Espresso ve Latte yapabilme özelliğine sahiptir. Latte kapasitesi için otomatik süt köpürtme sistemleri (örn. Philips LatteGo, De'Longhi LatteCrema) önemli bir kolaylık sağlar. Bu sistemler sütü otomatik olarak köpürtüp kahveye ekler.",
+              "sources": [
+                {
+                  "url": "https://www.hepsiburada.com/philips-espresso-cappuccino-makineleri-xc-60003707-b8058",
+                  "title": "Philips Espresso & Cappuccino Makineleri - Hepsiburada.com",
+                  "excerpt": "Birçok Philips modelinde süt köpürtücü (LatteGo) ve çeşitli kahve türleri (Espresso dahil) özelliği bulunur."
+                },
+                {
+                  "url": "https://www.akakce.com/espresso-makinesi/latte-makinesi.html",
+                  "title": "Latte Makinesi Fiyatları | En Ucuzu Akakçe",
+                  "excerpt": "Tam otomatik latte makineleri demleme sürecini otomatikleştirir."
+                }
+              ]
+            }
+          ],
+          "final_determined_value": "Otomatik Espresso hazırlama; Otomatik veya yarı otomatik süt köpürtme sistemi ile Latte/Cappuccino hazırlama kapasitesi (tercihen LatteGo veya benzeri kolay temizlenebilir sistem)",
+          "justification": "Müşterinin temel beklentilerinden ikisi olan Espresso ve Latte hazırlama kapasitesini doğrudan karşılar. Otomatik süt sistemleri, kullanım kolaylığı açısından önemlidir."
+        },
+        {
+          "filter_name": "Kahve Çekirdeğinden Taze Öğütme",
+          "research_iterations": [
+            {
+              "iteration_number": 1,
+              "query_used": "tam otomatik kahve makinesi kahve çekirdeği öğütme",
+              "findings_summary": "Tam otomatik kahve makinelerinin temel özelliği kahve çekirdeklerini taze olarak öğütmesidir. Genellikle seramik veya çelik konik öğütücüler kullanılır. Öğütme kalınlığı ayarı da çoğu modelde bulunur.",
+              "sources": [
+                {
+                  "url": "https://www.amazon.com.tr/Philips-EP2220-10-Otomatik-Espresso/dp/B07MMSHC4R",
+                  "title": "PHILIPS EP2220/10 Tam Otomatik Espresso Makinası, 1.8 L Kapasite, Zamanlayıcı, AquaClean Özelliği, Siyah",
+                  "excerpt": "Dayanıklı seramik öğütücüler ile 20.000 bardak üstün kaliteli kahve."
+                }
+              ]
+            }
+          ],
+          "final_determined_value": "Dahili kahve çekirdeği öğütücüsü (Seramik veya çelik konik öğütücü tercih edilir)",
+          "justification": "Müşterinin 'kahve çekirdeğinden taze öğütme yapabilmeli' beklentisini karşılar ve tam otomatik kahve makinelerinin temel özelliğidir."
+        }
+      ],
+      "resources_used": [
+        "https://www.philips.com.tr/c-f/XC000004116/philips-espresso-makinemin-temizlik-ve-bak%C4%B1m%C4%B1n%C4%B1-nas%C4%B1l-yapar%C4%B1m",
+        "https://gaggiamilano.com.tr/blog/tam-otomatik-kahve-makinesi-alirken-nelere-dikkat-edilmeli",
+        "https://www.arcelik.com.tr/blog/kahve-makinesi-temizligi-ve-bakimi",
+        "https://www.akakce.com/espresso-makinesi/philips.html",
+        "https://shop.delonghi.com.tr/otomatik-kahve-makineleri",
+        "https://www.cimri.com/ogutuculu-kahve-makinesi",
+        "https://www.philips.com.tr/c-e/ho/kahve-makineleri/5500-serisi-lattego.html",
+        "https://www.baristamarketi.com/blogs/news/espresso-makinesi-temizligi-nasil-yapilir",
+        "https://www.hepsiburada.com/philips-espresso-cappuccino-makineleri-xc-60003707-b8058",
+        "https://www.akakce.com/espresso-makinesi/latte-makinesi.html",
+        "https://www.amazon.com.tr/Philips-EP2220-10-Otomatik-Espresso/dp/B07MMSHC4R"
+      ]
+    },
+    {
+      "step": "4. Optimal Filtre Setinin Belirlenmesi ve Gerekçelendirme",
+      "details": {
+        "final_optimal_filters": [
+          {
+            "name": "Fiyat Aralığı",
+            "measure": "12000-28000",
+            "unit": "TL",
+            "justification": "Türkiye piyasasındaki 'başlangıç-orta' seviye tam otomatik kahve makinelerinin mevcut fiyat aralığını temsil eder ve müşterinin bütçe beklentisiyle uyumludur. Bu aralık, kaliteli öğütme ve otomatik süt sistemi sunan modelleri kapsar."
+          },
+          {
+            "name": "Kahve Öğütücü Tipi",
+            "measure": "Dahili kahve çekirdeği öğütücüsü",
+            "unit": "özellik",
+            "justification": "Müşterinin 'kahve çekirdeğinden taze öğütme yapabilmeli' beklentisini doğrudan karşılar ve tam otomatik makinelerin temel özelliğidir. Seramik veya çelik konik öğütücüler daha iyi performans sunar."
+          },
+          {
+            "name": "Temizleme Kolaylığı",
+            "measure": "Çıkarılabilir demleme grubu ve otomatik durulama/kireç çözme programı; Kolay çıkarılabilir ve bulaşık makinesinde yıkanabilir süt sistemi (LatteGo gibi)",
+            "unit": "özellik",
+            "justification": "Müşterinin 'kolay temizlenebilmeli' beklentisini en iyi şekilde karşılayan somut özelliklerdir. Bu özellikler, düzenli bakımı ve hijyeni basitleştirir."
+          },
+          {
+            "name": "Demleme Hızı",
+            "measure": "İlk kahve hazırlama süresi (makine açılış ve ısınma dahil) < 90 saniye; Tek shot espresso demleme süresi < 30 saniye",
+            "unit": "saniye",
+            "justification": "Müşterinin 'sabahları hızlıca kahve yapabilmeli' beklentisini karşılamak için makinenin genel hazırlık süresi ve bir fincanın demleme süresi için somut ve ölçülebilir sınırlar belirlenmiştir."
+          },
+          {
+            "name": "İçecek Kapasitesi",
+            "measure": "Otomatik Espresso hazırlama ve otomatik/yarı otomatik süt köpürtme sistemi ile Latte/Cappuccino hazırlama kapasitesi",
+            "unit": "özellik",
+            "justification": "Müşterinin 'Espresso ve Latte hazırlama kapasitesi kesinlikle olmalı' beklentisini karşılar. Otomatik süt sistemleri, ev kullanıcıları için pratiklik sunar."
+          }
+        ]
+      }
+    }
+  ],
+  "final_product_filters": [
+    {
+      "name": "Fiyat Aralığı",
+      "measure": "12000-28000",
+      "unit": "TL"
+    },
+    {
+      "name": "Kahve Öğütücü Tipi",
+      "measure": "Dahili kahve çekirdeği öğütücüsü",
+      "unit": "özellik"
+    },
+    {
+      "name": "Temizleme Kolaylığı",
+      "measure": "Çıkarılabilir demleme grubu ve otomatik durulama/kireç çözme programı; Kolay çıkarılabilir ve bulaşık makinesinde yıkanabilir süt sistemi",
+      "unit": "özellik"
+    },
+    {
+      "name": "Demleme Hızı",
+      "measure": "İlk kahve hazırlama süresi (makine açılış ve ısınma dahil) < 90 saniye; Tek shot espresso demleme süresi < 30 saniye",
+      "unit": "saniye"
+    },
+    {
+      "name": "İçecek Kapasitesi",
+      "measure": "Otomatik Espresso hazırlama ve otomatik/yarı otomatik süt köpürtme sistemi ile Latte/Cappuccino hazırlama kapasitesi",
+      "unit": "özellik"
+    }
+  ],
+  "customer_prompt_raw": "Ev kullanımı için tam otomatik bir kahve makinesi arıyorum.Özel Beklentiler:\n\nKahve çekirdeğinden taze öğütme yapabilmeli.\nKolay temizlenebilmeli.\nSabahları hızlıca kahve yapabilmeli.\nEspresso ve Latte hazırlama kapasitesi kesinlikle olmalı.\nBütçesi başlangıç-orta seviye.",
+  "customer_personal_info_raw": "Türkiye, Ankara'da yaşıyor."
+}
